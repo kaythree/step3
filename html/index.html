@@ -1,0 +1,101 @@
+<!doctype html>
+<html ng-app="AngularModule">
+	<head>
+		<title> Summary </title>
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" />
+	    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.material.min.css" />
+	    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.min.css" />
+	    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.material.min.css" />	
+	    <link rel="stylesheet" href="../css/style.css" />
+	    <link rel="stylesheet" href="../css/gridStyle.css" />
+
+	</head>
+	<body ng-controller="SummaryController" ng-init="init()">
+		<div class="main-container" id="step-three">
+			<div class="page-title"><b>Step 3</b> - Add Values</div>
+		
+			<div class="content-container">
+				<!-- toggleClasses: summary / mytask below to details-grid -->
+				<div id="details-grid" class="mytask"> 
+					<div ng-controller="mytaskGridCtrl" class="mytaskCont">
+						<kendo-grid options="mainGridOptions">
+							
+						</kendo-grid>
+					</div>
+					<div ng-controller="summaryGridCtrl" class="summaryCont">
+						<kendo-grid options="mainGridOptions">
+							<div k-detail-template>
+								<div class="progress-level-bar">
+									<div class="progress-level first done">
+										<div class="progress-icon">
+											<i class="fa fa-user"></i>
+										</div>
+										<p class="progress-desc">Supplier</p>
+									</div>
+									<div class="progress-level done">
+										<div class="progress-icon">
+											<i class="fa fa-user"></i>
+										</div>
+										<div class="progress-pipe"></div>
+										<p class="progress-desc">Buyer</p>
+									</div>
+									<div class="progress-level done now">
+										<div class="progress-icon">
+											<i class="fa fa-user"></i>
+										</div>
+										<div class="progress-pipe"></div>	
+										<p class="progress-desc">Replenishment</p>
+									</div>
+									<div class="progress-level">
+										<div class="progress-icon">
+											<i class="fa fa-user"></i>
+										</div>
+										<div class="progress-pipe"></div>
+										<p class="progress-desc">Procurement</p>
+									</div>
+				                </div>
+				                <div class="status"> <!-- addClass "complete" -->
+				                	<div class="inProgressMsg">
+				                		<p class="ipText">In-Progress</p>
+				                		<p class="ipStatus">Replenishment</p>
+				                	</div>
+				                	<div class="completeMsg">
+				                		<i class="fa fa-check"></i>
+				                		<p class="ipStatus">Complete</p>
+				                	</div>
+				                </div>
+				            </div>
+						</kendo-grid>
+					</div>
+				</div>
+				<div class="button-container">
+                  <span class="btn-common cancel-btn">Submit</span>
+                  <span class="btn-common next-btn">Next</span>
+                  <span class="btn-common previous-btn">Previous</span>
+               </div>
+			</div>
+		</div>	
+		<div class="sm-overlay"></div>
+		<div class="sum-lightbox commentbox">
+			<div class="header">
+				<h2>Modify</h2>
+			</div>
+			<div class="content">
+				<p><i class="fa fa-pencil"></i> Comment</p>
+				<textarea placeholder="Please type your comment"></textarea>
+				<p class="char-len">Max 255 characters</p>
+				<div class="buttons">
+					<button class="active">Modify</button>
+					<button>Cancel</button>
+				</div>
+			</div>
+		</div>	
+		<script type="text/javascript" src="../js/libs/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="../js/libs/angular.js"></script>
+		<script src="http://cdn.kendostatic.com/2015.1.429/js/kendo.all.min.js"></script>
+		<script type="text/javascript" src="../js/script.js"></script>
+	</body>
+</html>
+
